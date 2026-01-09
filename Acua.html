@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitor Acuático</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#041C2C">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main class="app">
+
+    <!-- Pantalla de conexión -->
+    <section id="loading" class="screen active">
+      <div class="orb"></div>
+      <p id="loading-text">Iniciando sistema acuático…</p>
+    </section>
+
+    <!-- Dashboard principal -->
+    <section id="dashboard" class="screen">
+      <h1>Estado del sistema</h1>
+
+      <div class="cards">
+        <div class="card">
+          <span>pH</span>
+          <strong id="ph">--</strong>
+        </div>
+
+        <div class="card">
+          <span>Temperatura</span>
+          <strong id="temp">--</strong>
+        </div>
+
+        <div class="card">
+          <span>Turbidez</span>
+          <strong id="turb">--</strong>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

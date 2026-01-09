@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(160deg, #041C2C, #0A4D68);
+  color: #E6F1F5;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* Loader acuático */
+.orb {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #00FFD1, #007C7C);
+  animation: float 3s ease-in-out infinite;
+  margin: 0 auto 30px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.card span {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.card strong {
+  display: block;
+  font-size: 1.8rem;
+  color: #00FFD1;
+  margin-top: 6px;
+}

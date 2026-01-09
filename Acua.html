@@ -2,47 +2,50 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Monitor Acuático</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#041C2C">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Acuario</title>
 
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <main class="app">
+  <!-- PANTALLA ID -->
+  <section id="screen-id" class="screen active">
+    <h1>Acuario</h1>
+    <input id="aquariumId" maxlength="6" placeholder="ID del acuario">
+    <button onclick="connect()">Conectar</button>
+    <p id="error"></p>
+  </section>
 
-    <!-- Pantalla de conexión -->
-    <section id="loading" class="screen active">
-      <div class="orb"></div>
-      <p id="loading-text">Iniciando sistema acuático…</p>
-    </section>
+  <!-- PANTALLA CARGA -->
+  <section id="screen-loading" class="screen">
+    <div class="spinner"></div>
+    <p id="loadingText"></p>
+  </section>
 
-    <!-- Dashboard principal -->
-    <section id="dashboard" class="screen">
-      <h1>Estado del sistema</h1>
+  <!-- MENU -->
+  <section id="screen-menu" class="screen">
+    <h2>Panel de Control</h2>
 
-      <div class="cards">
-        <div class="card">
-          <span>pH</span>
-          <strong id="ph">--</strong>
-        </div>
+    <div class="card">
+      <h3>Alimentador</h3>
+      <button onclick="feed('small')">Porción pequeña</button>
+      <button onclick="feed('medium')">Porción mediana</button>
+      <button onclick="feed('large')">Porción grande</button>
+    </div>
 
-        <div class="card">
-          <span>Temperatura</span>
-          <strong id="temp">--</strong>
-        </div>
+    <div class="card">
+      <h3>Iluminación</h3>
+      <input type="color" id="colorPicker" onchange="setColor(this.value)">
+    </div>
 
-        <div class="card">
-          <span>Turbidez</span>
-          <strong id="turb">--</strong>
-        </div>
-      </div>
-    </section>
-
-  </main>
+    <div class="card">
+      <h3>Estado del Agua</h3>
+      <p>Temperatura: <span id="temp">--</span> °C</p>
+      <p>pH: <span id="ph">--</span></p>
+    </div>
+  </section>
 
   <script src="app.js"></script>
 </body>
